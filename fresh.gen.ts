@@ -6,6 +6,8 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $CityForm_index from "./islands/CityForm/index.tsx";
+import * as $Result_index from "./islands/Result/index.tsx";
+import * as $contexts_Pokemon_index from "./islands/contexts/Pokemon/index.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -16,6 +18,8 @@ const manifest = {
   },
   islands: {
     "./islands/CityForm/index.tsx": $CityForm_index,
+    "./islands/Result/index.tsx": $Result_index,
+    "./islands/contexts/Pokemon/index.tsx": $contexts_Pokemon_index,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
