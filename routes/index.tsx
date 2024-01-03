@@ -4,17 +4,27 @@ import Pokemon from '../islands/contexts/Pokemon/index.tsx'
 
 export default function Home() {
   return (
-    <div className="bg-slate-400 h-full px-6 pt-10">
+    <div className="h-full bg-[#00000066] backdrop-blur-[1px]">
       <Pokemon />
-      <h1>Pokemon Weather Test</h1>
 
-      <div>
+      <div className="bg-[#ffcb03] p-4 flex flex-col sm:flex-row items-center gap-4">
+        <img src="/logo.png" width="150" />
+
         <CityForm />
-
-        <div className="mt-2">
-          <Result />
-        </div>
       </div>
+
+      {/* <div className="flex items-center justify-center border-white border-solid border-2">
+        <div className="flex flex-col">
+
+          <div>
+            <CityForm />
+
+            <div className="mt-2">
+              <Result />
+            </div>
+          </div>
+        </div>
+      </div> */}
     </div>
   );
 }
