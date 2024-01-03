@@ -1,6 +1,6 @@
 import { useEffect } from "preact/hooks";
 
-import { city, pokemon, temp, raining } from "./state.ts";
+import { city, pokemon, temp, raining, pokemonCode } from "./state.ts";
 import { getWeatherData } from "../../../services/weather.ts";
 import { getPokemonData } from "../../../services/pokemon.ts";
 
@@ -17,7 +17,9 @@ const PokemonProvider = () => {
         temp.value = weatherData.main.temp
 
         const pokemonData = await getPokemonData(weatherData.main.temp, weatherData.weather)
-        pokemon.value = pokemonData.pokemon[Math.floor(Math.random() * pokemonData.pokemon.length)].pokemon.name
+        const sorted = pokemonData.pokemon[Math.floor(Math.random() * pokemonData.pokemon.length)]
+        pokemon.value = sorted.pokemon.name
+        pokemonCode.value = /pokemon\/(.*?)\//i.exec(sorted.pokemon.url)?.[1] ?? ""
       } catch (e) {
         console.error(e)
       } finally {

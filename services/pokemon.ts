@@ -4,6 +4,7 @@ type PokemonResponse = {
   pokemon: {
     pokemon: {
       name: string;
+      url: string;
     };
   }[];
 };

@@ -2,12 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-  height: 100%;
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
-body {
-  background-image: url('/map.webp');
-  background-size: cover;
-  background-position: center;
+html, body {
+  height: 100%;
 }

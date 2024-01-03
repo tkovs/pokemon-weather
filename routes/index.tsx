@@ -4,7 +4,7 @@ import Pokemon from '../islands/contexts/Pokemon/index.tsx'
 
 export default function Home() {
   return (
-    <div className="h-full bg-[#00000066] backdrop-blur-[1px]">
+    <div className="flex flex-col h-full bg-[#2e6fb6] backdrop-blur-[1px]">
       <Pokemon />
 
       <div className="bg-[#ffcb03] p-4 flex flex-col sm:flex-row items-center gap-4">
@@ -13,18 +13,9 @@ export default function Home() {
         <CityForm />
       </div>
 
-      {/* <div className="flex items-center justify-center border-white border-solid border-2">
-        <div className="flex flex-col">
-
-          <div>
-            <CityForm />
-
-            <div className="mt-2">
-              <Result />
-            </div>
-          </div>
-        </div>
-      </div> */}
+      <div className="flex grow">
+        <Result />
+      </div>
     </div>
   );
 }
