@@ -1,12 +1,12 @@
 import { useMemo } from "preact/hooks";
-import { city, pokemon, raining, pokemonCode, temp } from '../contexts/Pokemon/state.ts'
+import { city, pokemon, raining, temp } from '../contexts/Pokemon/state.ts'
 
 const Result = () => {
-  const hydrated = useMemo(() => pokemon.value.length > 0, [pokemon.value])
+  const hydrated = useMemo(() => (pokemon.value.name?.length ?? 0) > 0, [pokemon.value])
 
   const pokemonName = useMemo(() => {
     if (!hydrated) return '...'
-    return pokemon.value
+    return pokemon.value.name
   }, [pokemon.value])
 
   const cityName = useMemo(() => {
@@ -34,7 +34,7 @@ const Result = () => {
       </div>
 
       <div>
-        {hydrated ? <img className="h-full mx-auto sm:mx-none" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonCode.value}.png`} alt="Pokemon image" /> : null}
+        {hydrated ? <img className="h-full mx-auto sm:mx-none" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.value.code}.png`} alt="Pokemon image" /> : null}
         {/* {hydrated ? <img className="h-full max-h-[110px]" src={`https://www.smogon.com/dex/media/sprites/xy/${pokemonName}.gif`} alt="Pokemon image" /> : null} */}
       </div>
     </div>

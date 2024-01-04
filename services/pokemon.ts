@@ -10,7 +10,6 @@ type PokemonResponse = {
 };
 
 const getPokemonType = (temp: number, weather: Response["weather"]) => {
-  console.log({ temp, weather });
   if (weather.some(({ main }) => main === "Rain")) return "electrical";
 
   if (temp < 5) return "ice";
