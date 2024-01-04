@@ -1,6 +1,6 @@
 import { useEffect } from "preact/hooks";
 
-import { city, pokemon, temp, raining } from "./state.ts";
+import { city, pokemon, temp, raining, loading } from "./state.ts";
 import { getWeatherData } from "../../../services/weather.ts";
 import { getPokemonData } from "../../../services/pokemon.ts";
 
@@ -8,7 +8,7 @@ const PokemonProvider = () => {
   useEffect(() => {
     const hydrate = async () => {
       try {
-        console.log('set isloading to true')
+        loading.value = true
         pokemon.value = {}
 
         const weatherData = await getWeatherData(city.value)
@@ -25,7 +25,7 @@ const PokemonProvider = () => {
       } catch (e) {
         console.error(e)
       } finally {
-        console.log('set isloading to false')
+        loading.value = false
       }
     }
 
