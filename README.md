@@ -4,7 +4,7 @@
 </h1>
 
 <h4 align="center">
-  This is just another solution to the <a href="https://gitlab.com/online-app/pokemon-weather-test/-/tree/main/developer">Pokemon Weather Test</a>, a front-end coding challenge from Online App.
+  This is just another solution to the <a href="https://gitlab.com/online-app/pokemon-weather-test/-/tree/main/developer">Pokemon Weather Test</a>, a front-end coding challenge from Online App. The exercise is described [here](/repo/exercise.md).
 </h4>
 
 <p align="center">
