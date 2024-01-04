@@ -1,27 +1,19 @@
-import { Head } from "$fresh/runtime.ts";
+import Pokemon from '../islands/contexts/Pokemon/index.tsx'
 
 export default function Error404() {
   return (
-    <>
-      <Head>
-        <title>404 - Page not found</title>
-      </Head>
-      <div class="px-4 py-8 mx-auto bg-[#86efac]">
-        <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
-          <img
-            class="my-6"
-            src="/logo.svg"
-            width="128"
-            height="128"
-            alt="the Fresh logo: a sliced lemon dripping with juice"
-          />
-          <h1 class="text-4xl font-bold">404 - Page not found</h1>
-          <p class="my-4">
-            The page you were looking for doesn't exist.
-          </p>
-          <a href="/" class="underline">Go back home</a>
+    <div className="flex flex-col h-full bg-[#2e6fb6] backdrop-blur-[1px]">
+      <Pokemon />
+
+      <div className="bg-[#ffcb03] p-4 flex flex-col sm:flex-row items-center gap-4">
+        <img src="/logo.png" width="150" />
+      </div>
+
+      <div className="flex grow">
+        <div className="bg-white sm:flex-row justify-between gap-4 p-4 rounded-md mx-4 my-auto sm:mx-auto max-w-[500px] flex-auto">
+          Page not found. <a className="font-bold" href="/">Click here</a> to go to the homepage.
         </div>
       </div>
-    </>
+    </div>
   );
 }
